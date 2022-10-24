@@ -20,6 +20,15 @@ function capSentence(text) {
   return capsArray.join(' ')
 }
 
+function capSentence(text) {
+  // using map
+
+  const wordsArray = text.toLowerCase().split(' ')
+  const capsArray = wordsArray.map(word => {
+    return word[0].toUpperCase() + word.slice(1)
+  })
+  return capsArray.join(' ')
+}
 
 
 module.exports = capSentence
