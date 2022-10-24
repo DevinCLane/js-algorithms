@@ -30,5 +30,13 @@ function capSentence(text) {
   return capsArray.join(' ')
 }
 
+function capSentence(text) {
+  const wordsArray = text.toLowerCase().split(' ')
+  const capsArray = wordsArray.map(word => {
+    return word.replace(word[0], word[0].toUpperCase())
+  })
+  return capsArray.join(' ')
+}
+
 
 module.exports = capSentence
