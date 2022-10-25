@@ -25,6 +25,11 @@ function palindromeChecker(text) {
     return true;
 }
 
+function palindromeChecker(text) {
+    const reversedText = text.split('').reverse().join('')
+    return reversedText === text;
+}
+
 
 
 module.exports = palindromeChecker;
