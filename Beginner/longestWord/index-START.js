@@ -6,7 +6,16 @@ E.g reverseString('algorithms') // should return 'smhtirogla'
 
 
 function longestWord(text) {
-    // Code goes here
+    const wordArray = text.split(' ')
+    let longestWordLength = 0
+    let longestWord = ''
+    for (const word of wordArray) {
+        if (word.length > longestWordLength) {
+            longestWordLength = word.length
+            longestWord = word
+        }
+    }
+    return longestWord
 }
 
 
