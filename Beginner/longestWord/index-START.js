@@ -18,5 +18,24 @@ function longestWord(text) {
     return longestWord
 }
 
+// using reduce
+
+function longestWord(text) {
+    const wordArray = text.split(' ')
+    const result = wordArray.reduce((maxLengthWord, currentWord) => {
+        if (currentWord.length > maxLengthWord.length) {
+            return currentWord
+        } else return maxLengthWord
+    }, '')
+    return result; 
+}
+
+// using sort
+
+function longestWord(text) {
+    const sortedArray = text.split(' ').sort((wordA, wordB) => wordB.length - wordA.length)
+    return sortedArray[0]
+}
+
 
 module.exports = longestWord
