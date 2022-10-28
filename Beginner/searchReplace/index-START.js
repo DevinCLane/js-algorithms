@@ -1,12 +1,9 @@
 function searchReplace(str, word, newWord) {
-    let regex = new RegExp(word, "gi")
-
-    if (/[A-Z]/.test(word[0])) {
-
-        newWord = newWord.charAt(0).toUpperCase() + newWord.slice(1);
+    // match upper case of `word` to `newWord`
+    if (word[0] === word[0].toUpperCase()) {
+        newWord = newWord[0].toUpperCase() + newWord.slice(1)
     }
-
-    return str.replace(regex, newWord)
+    return str.replace(word, newWord)
 }
 
 
