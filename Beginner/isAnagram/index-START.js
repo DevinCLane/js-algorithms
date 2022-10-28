@@ -8,7 +8,10 @@ don't. E.g
 
 
 function isAnagram(stringA, stringB) {
-    // Code goes here
+    const sanitizeStr = str => {
+        return str.toLowerCase().replace(/[^a-z\d]/g, '').split('').sort().join('')
+    }
+    return sanitizeStr(stringA) === sanitizeStr(stringB)
 }
 
 
