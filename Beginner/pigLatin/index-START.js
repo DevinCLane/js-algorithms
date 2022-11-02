@@ -10,7 +10,25 @@ Translate the provided string to pig latin by following the rules below:
 */
 
 function pigLatin(str) {
-  // Code goes here
+  // convert the string to lower case
+  str = str.toLowerCase()
+  // keep track of vowel index
+  let vowelIndex = 0
+  // set up our vowels
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  // if the first letter is a vowel, add the "way" ending
+  if (vowels.includes(str[0])) {
+    return str + 'way'
+  }
+  else {
+    for (const char of str) {
+      if (vowels.includes(char)) {
+        vowelIndex = str.indexOf(char)
+        break;
+      }
+      return str.slice(vowelIndex) + str.slice(0, vowelIndex) + 'ay'
+    }
+  }
 }
 
 module.exports = pigLatin;
