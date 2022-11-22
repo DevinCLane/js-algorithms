@@ -18,5 +18,18 @@ function mergeArrays(...arrays) {
 
 }
 
+// we can do the same thing with filter
+
+function mergeArrays(...arrays) {
+    let jointArray = []
+    arrays.forEach(array => {
+        jointArray = [...jointArray, ...array]
+    })
+
+    // if the index of the current element === the current index, that's the first occurance;
+    // if we see that element again, it will no longer pass this condition and be ignored. This removes duplicates
+    return jointArray.filter((ele, index) => jointArray.indexOf(ele) === index)
+}
+
 
 module.exports = mergeArrays
