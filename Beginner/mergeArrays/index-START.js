@@ -5,16 +5,17 @@
 */
 
 function mergeArrays(...arrays) {
-
+    // to simply merge multiple arrays we can do
     let jointArray = []
-    
+    // on each array that is passed in as an argument, spread it into a new jointArray
     arrays.forEach(array => {
         jointArray = [...jointArray, ...array]
-    });
+    })
+    
+    // then if we want to return no duplicates, we create a set
 
     return [...new Set([...jointArray])]
 
-    
 }
 
 
