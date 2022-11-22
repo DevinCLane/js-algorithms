@@ -31,5 +31,20 @@ function mergeArrays(...arrays) {
     return jointArray.filter((ele, index) => jointArray.indexOf(ele) === index)
 }
 
+// we can also remove duplicates using reduce
+
+function mergeArrays(...arrays) {
+    let jointArray = []
+    arrays.forEach(array => {
+        jointArray = [...jointArray, ...array]
+    })
+    return jointArray.reduce((uniqueArray, item) => {
+        // does the array include the item?, just return the array (don't add the duplicates)
+        if (uniqueArray.includes(item)) {
+            return uniqueArray;
+            // if the array doesn't include the item, this is the first occurance; thus we add the item to the array
+        } else return uniqueArray = [...uniqueArray, item]
+    }, [])
+}
 
 module.exports = mergeArrays
