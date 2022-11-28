@@ -34,5 +34,17 @@ function whereIBelong(arr, num) {
    return arr.indexOf(num)
 }
 
+// counting values smaller than num
+
+function whereIBelong(arr, num) {
+   let counter = 0;
+   for (let i = 0; i < arr.length; i++) {
+      if (num > arr[i]) {
+         counter++
+      }
+   }
+   return counter;
+}
+
 
 module.exports = whereIBelong
