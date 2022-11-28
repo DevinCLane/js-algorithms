@@ -6,12 +6,13 @@ ordering of that which was received. E.g
 
 
 function reverseString(text) {
-    return [...text].reduce((acc, char) => char + acc, '')
+    return [...text].reduce((a, c) => c + a, '')
 }
 
 function reverseInteger(num) {
-    let reversedNumber = parseInt(reverseString(num.toString()))
-    return (reversedNumber * Math.sign(num))
+    let reversedString = reverseString(num.toString())
+    let reversedNumber = parseInt(reversedString)
+    return reversedNumber * Math.sign(num)
 }
 
 
